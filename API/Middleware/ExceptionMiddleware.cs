@@ -1,11 +1,11 @@
-using API.Errors;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Hosting;
 using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
+using API.Errors;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace API.Middleware
 {
@@ -14,12 +14,12 @@ namespace API.Middleware
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
         private readonly IHostEnvironment _env;
-        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger,
+        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, 
             IHostEnvironment env)
         {
-            _next = next;
-            _logger = logger;
             _env = env;
+            _logger = logger;
+            _next = next;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -42,7 +42,7 @@ namespace API.Middleware
 
                 var json = JsonSerializer.Serialize(response, options);
 
-                await context.Response.WriteAsync(json);    
+                await context.Response.WriteAsync(json);
             }
         }
     }
