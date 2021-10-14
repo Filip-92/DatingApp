@@ -3,7 +3,8 @@ import { NgModule } from "@angular/core";
 import { FileUploadModule } from "ng2-file-upload";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown"
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
-import { NgxGalleryModule } from "ngx-gallery";
+import { NgxGalleryModule } from "@kolkov/ngx-gallery";
+import { HttpClientModule } from "@angular/common/http";
 import { ToastrModule } from "ngx-toastr";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { PaginationModule } from 'ngx-bootstrap/pagination';
