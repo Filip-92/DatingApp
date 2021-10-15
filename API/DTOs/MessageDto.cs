@@ -1,6 +1,6 @@
 using System;
 
-namespace API.Interfaces
+namespace API.DTOs
 {
     public class MessageDto
     {
@@ -15,4 +15,4 @@ namespace API.Interfaces
         public DateTime? DateRead { get; set; }
         public DateTime MessageSent { get; set; }
     }
-}
+} 

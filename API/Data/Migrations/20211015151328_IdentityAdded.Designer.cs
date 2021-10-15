@@ -3,13 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20211015151328_IdentityAdded")]
+    partial class IdentityAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,6 +66,7 @@ namespace API.Data.Migrations
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("TEXT");
+
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("TEXT");
 
@@ -78,10 +82,13 @@ namespace API.Data.Migrations
 
                     b.Property<string>("Interests")
                         .HasColumnType("TEXT");
+
                     b.Property<string>("Introduction")
                         .HasColumnType("TEXT");
+
                     b.Property<string>("KnownAs")
                         .HasColumnType("TEXT");
+
                     b.Property<DateTime>("LastActive")
                         .HasColumnType("TEXT");
 
@@ -94,8 +101,6 @@ namespace API.Data.Migrations
                     b.Property<string>("LookingFor")
                         .HasColumnType("TEXT");
 
-                    b.Property<byte[]>("PasswordHash")
-                        .HasColumnType("BLOB");
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
@@ -110,8 +115,6 @@ namespace API.Data.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("TEXT");
 
-                    b.Property<byte[]>("PasswordSalt")
-                        .HasColumnType("BLOB");
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("INTEGER");
 
@@ -127,7 +130,6 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -158,54 +160,80 @@ namespace API.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
                     b.Property<string>("Content")
                         .HasColumnType("TEXT");
+
                     b.Property<DateTime?>("DateRead")
                         .HasColumnType("TEXT");
+
                     b.Property<DateTime>("MessageSent")
                         .HasColumnType("TEXT");
+
                     b.Property<bool>("RecipientDeleted")
                         .HasColumnType("INTEGER");
+
                     b.Property<int>("RecipientId")
                         .HasColumnType("INTEGER");
+
                     b.Property<string>("RecipientUsername")
                         .HasColumnType("TEXT");
+
                     b.Property<bool>("SenderDeleted")
                         .HasColumnType("INTEGER");
+
                     b.Property<int>("SenderId")
                         .HasColumnType("INTEGER");
+
                     b.Property<string>("SenderUsername")
                         .HasColumnType("TEXT");
+
                     b.HasKey("Id");
+
                     b.HasIndex("RecipientId");
+
                     b.HasIndex("SenderId");
+
                     b.ToTable("Messages");
                 });
+
             modelBuilder.Entity("API.Entities.Photo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
                     b.Property<int>("AppUserId")
                         .HasColumnType("INTEGER");
+
                     b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
+
                     b.Property<string>("PublicId")
                         .HasColumnType("TEXT");
+
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
+
                     b.HasKey("Id");
+
                     b.HasIndex("AppUserId");
+
                     b.ToTable("Photos");
                 });
+
             modelBuilder.Entity("API.Entities.UserLike", b =>
                 {
                     b.Property<int>("SourceUserId")
                         .HasColumnType("INTEGER");
+
                     b.Property<int>("LikedUserId")
                         .HasColumnType("INTEGER");
+
                     b.HasKey("SourceUserId", "LikedUserId");
+
                     b.HasIndex("LikedUserId");
+
                     b.ToTable("Likes");
                 });
 
@@ -315,12 +343,14 @@ namespace API.Data.Migrations
                         .HasForeignKey("RecipientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
                     b.HasOne("API.Entities.AppUser", "Sender")
                         .WithMany("MessagesSent")
                         .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
+
             modelBuilder.Entity("API.Entities.Photo", b =>
                 {
                     b.HasOne("API.Entities.AppUser", "AppUser")
@@ -329,6 +359,7 @@ namespace API.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
+
             modelBuilder.Entity("API.Entities.UserLike", b =>
                 {
                     b.HasOne("API.Entities.AppUser", "LikedUser")
@@ -336,6 +367,7 @@ namespace API.Data.Migrations
                         .HasForeignKey("LikedUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
                     b.HasOne("API.Entities.AppUser", "SourceUser")
                         .WithMany("LikedUsers")
                         .HasForeignKey("SourceUserId")
