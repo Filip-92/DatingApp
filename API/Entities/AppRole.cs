@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace API.Entities
 {
@@ -7,4 +7,4 @@ namespace API.Entities
     {
         public ICollection<AppUserRole> UserRoles { get; set; }
     }
-}
+} 

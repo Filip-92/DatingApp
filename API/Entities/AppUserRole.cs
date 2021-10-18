@@ -7,4 +7,4 @@ namespace API.Entities
         public AppUser User { get; set; }
         public AppRole Role { get; set; }
     }
-}
+} 
