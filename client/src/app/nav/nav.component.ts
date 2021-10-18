@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
   model: any = {}
+  isShown:boolean = false;
 
   constructor(public accountService: AccountService, private router: Router, 
     private toastr: ToastrService) { }

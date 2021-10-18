@@ -15,7 +15,6 @@ namespace API.Controllers
 {
     public class AccountController : BaseApiController
     {
-        private readonly DataContext _context;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
@@ -37,7 +36,6 @@ namespace API.Controllers
 
             user.UserName = registerDto.Username.ToLower();
 
-            await _context.SaveChangesAsync();
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if (!result.Succeeded) return BadRequest(result.Errors);
