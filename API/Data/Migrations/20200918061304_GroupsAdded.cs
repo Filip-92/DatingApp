@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
@@ -7,10 +6,6 @@ namespace API.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "PasswordSalt",
-                table: "AspNetUsers");
-
             migrationBuilder.CreateTable(
                 name: "Groups",
                 columns: table => new
@@ -54,12 +49,6 @@ namespace API.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Groups");
-
-            migrationBuilder.AddColumn<byte[]>(
-                name: "PasswordSalt",
-                table: "AspNetUsers",
-                type: "BLOB",
-                nullable: true);
         }
     }
 }
