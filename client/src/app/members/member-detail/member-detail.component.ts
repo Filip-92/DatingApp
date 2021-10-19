@@ -28,8 +28,8 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   user: User;
 
   constructor(public presence: PresenceService, private route: ActivatedRoute, 
-    private messageService: MessageService, private memberService: MembersService, 
-    private accountService: AccountService, private router: Router,
+    private messageService: MessageService, private accountService: AccountService,
+    private router: Router, private memberService: MembersService, 
     private toastr: ToastrService) { 
       this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -91,5 +91,4 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
       this.toastr.success('You have liked ' + member.knownAs);
     })
   }
-
 }
