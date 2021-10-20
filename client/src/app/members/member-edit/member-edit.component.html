@@ -1,5 +1,5 @@
 <div class="row" *ngIf="member">
-    <div class="col-4">
+    <div class="col-md-4 col-sm-12">
         <h1>Your profile</h1>
     </div>
     <div class="col-8">
@@ -7,7 +7,7 @@
             <strong>Information: </strong> You have made changes.  Any unsaved changes will be lost
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-md-4 col-sm-12">
         <div class="card">
             <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}" 
                 class="card-img-top img-thumbnail">
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="col-8">
+    <div class="col-md-8 col-sm-12">
         <tabset class="member-tabset">
             <tab heading='About {{member.knownAs}}'>
                 <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
