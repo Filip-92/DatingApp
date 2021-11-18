@@ -21,8 +21,14 @@ After logging in to newly created account, all the app's features become accessi
 
 ![DatingApp4](https://user-images.githubusercontent.com/75435412/141817123-ac66eed0-4943-4e32-b27c-3a90a29ba2c1.PNG)
 
-  - Messages with the user
+  - Conversation with the user
 
 ![DatingApp5](https://user-images.githubusercontent.com/75435412/141817146-79bcafd1-97e2-42da-83b3-9abf221d98c9.PNG)
+
+* The user can also update account details
+
 ![DatingApp6](https://user-images.githubusercontent.com/75435412/141817158-7614bf8b-1d33-4d47-8500-19c771cd2704.PNG)
+
+And manage the profile photos (add, delete, choose main). Each newly added photo must be approved by admin before it can be chosen as main. 
+
 ![DatingApp7](https://user-images.githubusercontent.com/75435412/141817172-e88c7732-0ffa-406f-9425-09830989ad78.PNG)
