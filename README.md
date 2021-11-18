@@ -2,7 +2,12 @@
 Web application built using ASP.NET Core API (.Net 5.0) and Angular 10
 
 First you need to register your account, filling in details such as gender, first name, last name and the username you want to be displayed for other users. Since this is a dating app, you must also give your birth date, which needs to state that the user is at least 18 years old.
+
 ![DatingApp1](https://user-images.githubusercontent.com/75435412/141817102-b37de86f-73b5-4d4e-8a0b-c6fac6ca8465.PNG)
+
+After logging in to newly created account, all the app's features become accessible, such as:
+* Matches, that can be filtered by users' age, gender, etc.
+
 ![DatingApp2](https://user-images.githubusercontent.com/75435412/141817112-b404bba9-d783-4137-aea5-6a3ae35e5975.PNG)
 ![DatingApp3](https://user-images.githubusercontent.com/75435412/141817118-0f963cad-7681-47d3-8431-08aa97fd993c.PNG)
 ![DatingApp4](https://user-images.githubusercontent.com/75435412/141817123-ac66eed0-4943-4e32-b27c-3a90a29ba2c1.PNG)
