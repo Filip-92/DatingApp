@@ -6,9 +6,12 @@ First you need to register your account, filling in details such as gender, firs
 ![DatingApp1](https://user-images.githubusercontent.com/75435412/141817102-b37de86f-73b5-4d4e-8a0b-c6fac6ca8465.PNG)
 
 After logging in to newly created account, all the app's features become accessible, such as:
-* Matches, that can be filtered by users' age, gender, etc.
+* Matches, that can be filtered by users' age, gender and their last activity
 
 ![DatingApp2](https://user-images.githubusercontent.com/75435412/141817112-b404bba9-d783-4137-aea5-6a3ae35e5975.PNG)
+
+* List of users liked by the user and vice versa
+
 ![DatingApp3](https://user-images.githubusercontent.com/75435412/141817118-0f963cad-7681-47d3-8431-08aa97fd993c.PNG)
 ![DatingApp4](https://user-images.githubusercontent.com/75435412/141817123-ac66eed0-4943-4e32-b27c-3a90a29ba2c1.PNG)
 ![DatingApp5](https://user-images.githubusercontent.com/75435412/141817146-79bcafd1-97e2-42da-83b3-9abf221d98c9.PNG)
